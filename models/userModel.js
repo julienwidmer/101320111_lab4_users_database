@@ -53,7 +53,7 @@ const UserSchema = new mongoose.Schema({
                 type: String,
                 required: [true, "Please enter geo lat"]
             },
-            long: {
+            lng: {
                 type: String,
                 required: [true, "Please enter geo long"]
             }
