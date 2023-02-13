@@ -14,16 +14,24 @@ npm install
 
 
 3. Run Server
-```bash
-npm install
-```
-
-2. Run Server
 
 ```bash
 npm start
 ```
 
-You can browse the API on port 3001.
+## Create a new User
+To create a new user, send a POST request with a valid JSON object to the `/users` endpoint on port `3000`.
 
-[http://localhost:3001](http://localhost:3001)
+`http://localhost:3000/users`
+
+### Example of a valid User JSON object
+```json
+{
+    "username": "user532",
+    "email": "user@example.com",
+    "city": "Toronto",
+    "website": "https://user532.portfolio.freebie.com",
+    "zip": "34344-1112",
+    "phone": "1-123-456-7890"
+}
+```

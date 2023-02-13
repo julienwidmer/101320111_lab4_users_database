@@ -25,14 +25,14 @@ mongoose.connect(DB_CONNECTION_STRING, {
 });
 
 // Server config
-const SERVER_PORT = 3001;
+const SERVER_PORT = 3000;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routing config
-// http://localhost:3001/
-app.post("/", async (req, res) => {
+// http://localhost:3000/users
+app.post("/users", async (req, res) => {
     const user = new userModel(req.body);
 
     try {
