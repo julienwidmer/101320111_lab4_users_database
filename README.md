@@ -27,11 +27,13 @@ To create a new user, send a POST request with a valid JSON object to the `/user
 ### Example of a valid User JSON object
 ```json
 {
-    "username": "user532",
-    "email": "user@example.com",
+  "username": "user532",
+  "email": "user@example.com",
+  "website": "https://user532.portfolio.freebie.com",
+  "address": {
     "city": "Toronto",
-    "website": "https://user532.portfolio.freebie.com",
-    "zip": "34344-1112",
-    "phone": "1-123-456-7890"
+    "zipcode": "34344-1112"
+  },
+  "phone": "1-123-456-7890"
 }
 ```

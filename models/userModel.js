@@ -25,20 +25,22 @@ const UserSchema = new mongoose.Schema({
             message: (props) => `'${props.value}' is not a valid email address`
         }
     },
-    city: {
-        type: String,
-        required: [true, "Please enter city"],
-        match: [/^[a-zA-Z\s]+$/, "Only letters and spaces are allowed"]
-    },
     website: {
         type: String,
         required: [true, "Please enter website"],
         match: [/^(https?:\/\/)/i, "Please enter valid website URL with HTTP or HTTPS"]
     },
-    zip: {
-        type: String,
-        required: [true, "Please enter ZIP"],
-        match: [/^\d{5}-\d{4}$/, "Please enter valid ZIP with the following format DDDDD-DDDD (i.e. 12345-1234)"]
+    address: {
+        city: {
+            type: String,
+            required: [true, "Please enter city"],
+            match: [/^[a-zA-Z\s]+$/, "Only letters and spaces are allowed"]
+        },
+        zipcode: {
+            type: String,
+            required: [true, "Please enter ZIP"],
+            match: [/^\d{5}-\d{4}$/, "Please enter valid ZIP with the following format DDDDD-DDDD (i.e. 12345-1234)"]
+        },
     },
     phone: {
         type: String,
@@ -52,9 +54,11 @@ const UserSchema = new mongoose.Schema({
 {
     "username": "user532",
     "email": "user@example.com",
-    "city": "Toronto",
     "website": "https://user532.portfolio.freebie.com",
-    "zip": "34344-1112",
+    "address": {
+        "city": "Toronto",
+        "zipcode": "34344-1112"
+    },
     "phone": "1-123-456-7890"
 }
 */
